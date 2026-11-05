@@ -1,0 +1,71 @@
+region_code,region_nom,district_code,district_nom
+R01,Boucle du Mouhoun,D01,Boromo
+R01,Boucle du Mouhoun,D02,Solenzo
+R01,Boucle du Mouhoun,D03,Nouna
+R01,Boucle du Mouhoun,D04,Dedougou
+R01,Boucle du Mouhoun,D05,Toma
+R01,Boucle du Mouhoun,D06,Tougan
+R02,Cascades,D07,Banfora
+R02,Cascades,D08,Mangodara
+R02,Cascades,D09,Sindou
+R03,Centre,D10,Baskuy
+R03,Centre,D11,Bogodogo
+R03,Centre,D12,Boulmiougou
+R03,Centre,D13,Nongr-Massom
+R03,Centre,D14,Sig-Noghin
+R04,Centre-Est,D15,Bittou
+R04,Centre-Est,D16,Garango
+R04,Centre-Est,D17,Tenkodogo
+R04,Centre-Est,D18,Zabré
+R04,Centre-Est,D19,Ouargaye
+R04,Centre-Est,D20,Koupéla
+R04,Centre-Est,D21,Pouytenga
+R05,Centre-Nord,D22,Kongoussi
+R05,Centre-Nord,D23,Boulsa
+R05,Centre-Nord,D24,Tougouri
+R05,Centre-Nord,D25,Barsalogho
+R05,Centre-Nord,D26,Boussouma
+R05,Centre-Nord,D27,Kaya
+R06,Centre-Ouest,D28,Koudougou
+R06,Centre-Ouest,D29,Nanoro
+R06,Centre-Ouest,D30,Sabou
+R06,Centre-Ouest,D31,Réo
+R06,Centre-Ouest,D32,Tenado
+R06,Centre-Ouest,D33,Léo
+R06,Centre-Ouest,D34,Sapouy
+R07,Centre-Sud,D35,Kombissiri
+R07,Centre-Sud,D36,Sapone
+R07,Centre-Sud,D37,Po
+R07,Centre-Sud,D38,Manga
+R08,Est,D39,Bogande
+R08,Est,D40,Manni
+R08,Est,D41,Fada
+R08,Est,D42,Gayeri
+R08,Est,D43,Pama
+R08,Est,D44,Diapaga
+R09,Hauts-Bassins,D45,Dafra
+R09,Hauts-Bassins,D46,Dande
+R09,Hauts-Bassins,D47,Do
+R09,Hauts-Bassins,D48,Karangasso Vigue
+R09,Hauts-Bassins,D49,Léna
+R09,Hauts-Bassins,D50,N'Dorola
+R09,Hauts-Bassins,D51,Orodara
+R09,Hauts-Bassins,D52,Hounde
+R10,Nord,D53,Titao
+R10,Nord,D54,Yako
+R10,Nord,D55,Ouahigouya
+R10,Nord,D56,Séguénéga
+R10,Nord,D57,Thiou
+R10,Nord,D58,Gourcy
+R11,Plateau-Central,D59,Zorgho
+R11,Plateau-Central,D60,Bousse
+R11,Plateau-Central,D61,Ziniaré
+R12,Sahel,D62,Gorom-Gorom
+R12,Sahel,D63,Dori
+R12,Sahel,D64,Djibo
+R12,Sahel,D65,Sebba
+R13,Sud-Ouest,D66,Diébougou
+R13,Sud-Ouest,D67,Dano
+R13,Sud-Ouest,D68,Batié
+R13,Sud-Ouest,D69,Gaoua
+R13,Sud-Ouest,D70,Kampti
