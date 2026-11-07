@@ -47,3 +47,11 @@ def moteur():
     with admin.connect() as connexion:
         connexion.execute(text(f'DROP DATABASE IF EXISTS "{NOM_BASE_TEST}" WITH (FORCE)'))
     admin.dispose()
+
+@pytest.fixture
+def connexion(moteur):
+    """Une connexion dont tout le travail est annulé à la fin du test."""
+    with moteur.connect() as connexion:
+        transaction = connexion.begin()
+        yield connexion
+        transaction.rollback()
