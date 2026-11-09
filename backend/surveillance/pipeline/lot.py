@@ -22,7 +22,13 @@ SQL_NOUVEAU_LOT = text("""
 """)
 
 SQL_LOT_EXISTANT = text("""
-    SELECT id, nom_fichier FROM audit.lot_ingestion WHERE empreinte = :empreinte
+    SELECT id, nom_fichier, statut FROM audit.lot_ingestion WHERE empreinte = :empreinte
+""")
+
+SQL_REPRISE = text("""
+    UPDATE audit.lot_ingestion
+    SET statut = 'recu', detail = NULL, nb_lignes = 0, nb_rejets = 0
+    WHERE id = :id AND statut = 'echec'
 """)
 
 SQL_ECHEC = text("""
@@ -67,10 +73,14 @@ def enregistrer_lot(connexion: Connection, chemin: Path, source: str = "fichier_
 
     if ligne is None:
         existant = connexion.execute(SQL_LOT_EXISTANT, {"empreinte": empreinte}).one()
-        detail = f"Fichier identique au lot {existant.id} ({existant.nom_fichier}), déjà reçu"
-        return Lot(None, chemin.name, empreinte, "deja_recu", detail)
+        if existant.statut != "echec":
+            detail = f"Fichier identique au lot {existant.id} ({existant.nom_fichier}), déjà reçu"
+            return Lot(None, chemin.name, empreinte, "deja_recu", detail)
+        connexion.execute(SQL_REPRISE, {"id": existant.id})     # on retente le même lot
+        lot_id = existant.id
+    else:
+        lot_id = ligne[0]
 
-    lot_id = ligne[0]
     try:
         en_tete = lire_en_tete(chemin)
     except UnicodeDecodeError:

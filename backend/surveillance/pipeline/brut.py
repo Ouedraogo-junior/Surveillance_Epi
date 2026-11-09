@@ -55,3 +55,13 @@ def charger_brut(connexion: Connection, lot_id: int, chemin: Path) -> int:
         )
     connexion.execute(SQL_LOT_EN_COURS, {"id": lot_id, "nb_lignes": len(lignes)})
     return len(lignes)
+
+SQL_LIRE_BRUT = text("""
+    SELECT numero_ligne, contenu FROM raw.declaration_brute
+    WHERE lot_id = :lot_id ORDER BY numero_ligne
+""")
+
+
+def lire_brut(connexion: Connection, lot_id: int) -> list[tuple[int, dict]]:
+    """Relit les lignes d'un lot depuis la zone brute, dans le même format que lire_lignes()."""
+    return [(r.numero_ligne, r.contenu) for r in connexion.execute(SQL_LIRE_BRUT, {"lot_id": lot_id})]
